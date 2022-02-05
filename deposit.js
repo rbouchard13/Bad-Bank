@@ -34,17 +34,17 @@ function Deposit(){
   
     return ( 
       <Card 
-      bgcolor= "light"
-      txtcolor = "dark"
+      bgcolor= "secondary"
+      txtcolor = "light"
       header = "Deposit Portal"
       status={status}
       warn={warn}
       body = {Object.keys(ctx.session).length > 0 ? (
-        <>
+        <div style={{maxWidth: "30rem"}}>
           <h4>Current Balance $ {balance}</h4>
           <input type="number" className="form-control" value={transAmount} onChange={e =>setTransAmount(e.currentTarget.value)} required/>
           <button disabled={!transAmount} type="submit" className="btn btn-dark" onClick={handleSubmit} style={{margin: "10px"}}>Process Transaction</button>
-        </>
+        </div>
       ):(
         <>
         <div>Please Login in to View Account Balance and Process Transactions</div>

@@ -50,14 +50,15 @@ function CreateAccount(){
 
   return (
     <Card
-      bgcolor= "light"
-      txtcolor = "dark"
+      bgcolor= "secondary"
+      txtcolor = "light"
       header="Create Account"
       status={status}
       warn = {warn}
       body={show ? (
         <>
-        <div>Open an account with the Bad Bank and we will give you $100!</div>
+        <h1>Open an account with the Bad Bank and Recieve $100!</h1>
+        <div style={{maxWidth: "30rem"}}>
         <div>Name</div>
         <input type="input" className="form-control" id="name" placeholder="Enter Name" value={name} onChange={e =>setName(e.currentTarget.value)} required/>
         <div>Email</div>
@@ -65,7 +66,8 @@ function CreateAccount(){
         <div>Password</div>
         <input type="input" minLength="8" className="form-control" id="password" placeholder="Enter Password" value={password} onChange={e => setPassword(e.currentTarget.value)} required />
         <div id="passError" value="test"></div>
-         <button type="submit" disabled={!name && !email && !password} id="create" className="btn btn-dark" onClick={handleCreate} style={{margin: "10px"}}>Create Account</button>    
+         <button type="submit" disabled={!name && !email && !password} id="create" className="btn btn-dark" onClick={handleCreate} style={{margin: "10px"}}>Create Account</button>  
+         </div>  
         </>
       ):(
         <>

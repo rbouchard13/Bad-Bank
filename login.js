@@ -31,23 +31,25 @@ function Login(){
 
   return (
     <Card 
-      bgcolor= "light"
-      txtcolor = "dark"
+     bgcolor= "secondary"
+     txtcolor = "light"
       header= "Login"
       warn={warn}
       body = {show ? (
         <>
-        <div>Email</div>
-        <input type="input" className="form-control" id="email" placeholder="Enter Email" value={email} onChange={e =>setEmail(e.currentTarget.value)} required/>
-        <div>Password</div>
-        <input type="input" minLength="8" className="form-control" id="password" placeholder="Enter Password" value={password} onChange={e =>setPassword(e.currentTarget.value)} required />
-         <button disabled={!email && !password} type="submit" className="btn btn-dark" onClick={handleSubmit} style={{margin: "10px"}}>Login</button> 
+        <div style={{maxWidth: "30rem"}}>
+          <div>Email</div>
+            <input type="input" className="form-control" id="email" placeholder="Enter Email" value={email} onChange={e =>setEmail(e.currentTarget.value)} required/>
+          <div>Password</div>
+            <input type="input" minLength="8" className="form-control" id="password" placeholder="Enter Password" value={password} onChange={e =>setPassword(e.currentTarget.value)} required />
+          <button disabled={!email && !password} type="submit" className="btn btn-dark" onClick={handleSubmit} style={{margin: "10px"}}>Login</button> 
+        </div>
         </>
       ):(
         <>
         <h5>Your Account Session has been Succesfully Started</h5>
-        <button type="submit" className="btn btn-dark" onClick={event => location.href='#/deposit/'}>Deposit</button>
-        <button type="submit" className="btn btn-dark" onClick={event => location.href='#/withdraw/'} style={{margin: "10px"}}>Withdraw</button>
+          <button type="submit" className="btn btn-dark" onClick={event => location.href='#/deposit/'}>Deposit</button>
+          <button type="submit" className="btn btn-dark" onClick={event => location.href='#/withdraw/'} style={{margin: "10px"}}>Withdraw</button>
         </>     
       )}
     />

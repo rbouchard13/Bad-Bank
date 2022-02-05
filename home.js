@@ -4,9 +4,9 @@ function Home(){
   return (
     <center><Card
       bgcolor = "light"
-      txtcolor = "info"
+      txtcolor = "dark"
       header="Welcome to the Bad Bank!"
-      title="Where your money means everything to us! Because we take it!"
+      title="Let your money work for you with our industry leading .000000009% interest rate!"
       body={(<img src="bank.png" className="img-fluid" alt="responsive image"/>)}
     /></center>
   );  
