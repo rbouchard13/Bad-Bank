@@ -57,6 +57,7 @@ function CreateAccount(){
       warn = {warn}
       body={show ? (
         <>
+        <div>Open an account with the Bad Bank and we will give you $100!</div>
         <div>Name</div>
         <input type="input" className="form-control" id="name" placeholder="Enter Name" value={name} onChange={e =>setName(e.currentTarget.value)} required/>
         <div>Email</div>
