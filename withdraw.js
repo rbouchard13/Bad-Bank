@@ -6,6 +6,7 @@ function Withdraw(){
     const [balance, setBalance] = React.useState(ctx.session.balance);
   
     function handleSubmit(){
+      if(Math.sign(Number(transAmount)) === 1 || Math.sign(Number(transAmount)) === 0){
         if (Number(transAmount) > Number(balance)) {
           setWarn('UNABLE TO COMPLETE TRANSACTION DUE TO WITHDRAW AMOUNT EXCEEDING AVAILABLE BALANCE');
           setTimeout(() => setWarn(''), 3000);
@@ -20,7 +21,12 @@ function Withdraw(){
         setTransAmount('');
         updateUser(email);
         ctx.actions.push({name,email,action: "Withdraw",stamp: new Date().toString()});
+      } else {
+        setWarn('You have entered in invalid number. Please make sure to not add -');
+        setTransAmount('');
+        setTimeout(() => setWarn(''), 3000); 
       }
+    }
     
     function updateUser(email) {
         ctx.users.map((item) => {
